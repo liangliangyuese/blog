@@ -16,12 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import RedirectView
+from django.contrib.staticfiles.views import serve
+from . import views
 
 urlpatterns = [
+    path("", views.index, name="index"),
+    path('index/', views.index),
     path('admin/', admin.site.urls),
-    path('home/', include('home.urls')),
     path('comment/', include('comment.urls')),
     path('article/', include('article.urls')),
     path('user/', include('user.urls')),
+    path('favicon.ico', serve, {'path': 'static/image/favicon.ico'})
 
 ]
