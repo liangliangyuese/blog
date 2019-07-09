@@ -1,13 +1,12 @@
 {% extends "base/base.html" %}
 {% block title %}项目首页{% endblock %}
 {% block body %}
-    这是项目的首页
     {% if username %}
         <p>你好,{{ username }}!</p>
-        # 个人信息
-        # 退出
+        <a href="/user/info">个人信息</a><br/>
+        <a href="/user/logout">退出</a><br/>
     {% else %}
-        # 登录
-        # 注册
+        <a href="/user/login">登录</a><br/>
+        <a href="/user/register">注册</a><br/>
     {% endif %}
 {% endblock %}

@@ -37,8 +37,20 @@ def login(request):
         obj = LoginForm(request.POST)
         if obj.is_valid():
             username = obj.cleaned_data.get("username")
-            response = HttpResponse('登录成功')
+            response = HttpResponseRedirect('/')
             response.set_cookie("username", username)
             return response
         else:
             return HttpResponse('登陆失败')
+
+
+def info(request):
+    if request.method == "GET":
+        return render(request, 'user/info.html')
+
+
+def logout(request):
+    if request.method == "GET":
+        response = HttpResponseRedirect('/')
+        response.delete_cookie('username')
+        return response
