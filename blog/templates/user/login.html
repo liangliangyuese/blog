@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+{% block title %}用户登录{% endblock %}
+{% block body %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ obj }}
+        <input type="submit" value="提交">
+    </form>
+
+{% endblock %}

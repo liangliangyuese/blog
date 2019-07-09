@@ -27,7 +27,7 @@ class RegisterForm(forms.Form):
             raise forms.ValidationError("你的username长度必须小于50")
         else:
             # TODO username_exact
-            filter_result = User.objects.filter(username_exact=username)
+            filter_result = User.objects.filter(username=username)
             if len(filter_result):
                 # TODO raise
                 raise forms.ValidationError("你注册的username已经存在了")
@@ -35,7 +35,7 @@ class RegisterForm(forms.Form):
 
     def clean_email(self):
         email = self.cleaned_data.get("email")
-        filter_result = User.objects.filter(email_exact=email)
+        filter_result = User.objects.filter(email=email)
         if len(filter_result):
             raise forms.ValidationError("email 已经存在")
         return email
@@ -62,14 +62,18 @@ class LoginForm(forms.Form):
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
-        filter_result = User.objects.filter(email__exact=username)
+        filter_result = User.objects.filter(username=username)
         if not filter_result:
-            raise forms.ValidationError("邮箱不存在")
-        else:
-            filter_result = User.objects.filter(username__exact=username)
-            if not filter_result:
-                raise forms.ValidationError("用户昵称不存在")
+            raise forms.ValidationError("用户不存在")
         return username
+
+    def clean_password(self):
+        username = self.cleaned_data.get('username')
+        password = self.cleaned_data.get("password")
+        filter_result = User.objects.filter(username=username, password=password)
+        if not filter_result:
+            raise forms.ValidationError("密码不匹配")
+        return password
 
 
 class RestForm(forms.Form):

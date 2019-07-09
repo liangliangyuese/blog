@@ -2,7 +2,12 @@
 {% block title %}项目首页{% endblock %}
 {% block body %}
     这是项目的首页
-    # 注册
-    # 登录
-    # 退出
+    {% if username %}
+        <p>你好,{{ username }}!</p>
+        # 个人信息
+        # 退出
+    {% else %}
+        # 登录
+        # 注册
+    {% endif %}
 {% endblock %}
