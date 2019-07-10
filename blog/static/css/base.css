@@ -1,0 +1,23 @@
+#head_nav {
+    height: 20%;
+    width: 100%;
+    background-color: #5cb85c;
+}
+
+#left_nav {
+    height: 100%;
+    width: 20%;
+     background-color: #b88e90;
+}
+
+#head_nav {
+    height: 100%;
+    width: 60%;
+     background-color: #b84d46;
+}
+
+#main_body {
+    height: 100%;
+    width: 20%;
+     background-color: #392db8;
+}
