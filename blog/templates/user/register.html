@@ -1,6 +1,6 @@
 {% extends "base/base.html" %}
 {% block title %}用户注册{% endblock %}
-{% block body %}
+{% block main_body %}
     <form action="/user/register/" method="post">
         {% csrf_token %}
         {{ obj }}

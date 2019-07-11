@@ -1,12 +1,12 @@
 {% extends "base/base.html" %}
 {% block title %}项目首页{% endblock %}
-{% block body %}
-    {% if username %}
-        <p>你好,{{ username }}!</p>
-        <a href="/user/info">个人信息</a><br/>
-        <a href="/user/logout">退出</a><br/>
-    {% else %}
-        <a href="/user/login">登录</a><br/>
-        <a href="/user/register">注册</a><br/>
-    {% endif %}
-{% endblock %}
+{#{% block head_nav %}#}
+{#    {% if username %}#}
+{#        <p>你好,{{ username }}!</p>#}
+{#        <a href="/user/info">个人信息</a><br/>#}
+{#        <a href="/user/logout">退出</a><br/>#}
+{#    {% else %}#}
+{#        <a href="/user/login">登录</a><br/>#}
+{#        <a href="/user/register">注册</a><br/>#}
+{#    {% endif %}#}
+{#{% endblock %}#}

@@ -9,13 +9,28 @@
     <link rel="stylesheet" href="/static/css/base.css">
 </head>
 <body bgcolor="#5cecff">
-<div id="head_nav"></div>
-<div id="left_nav"></div>
-<div id="main_body">
-    {% block body %}
+<div id="head_nav">
+    {% include 'base/base_head.html' %}
+</div>
+
+
+<div id="left_nav">
+    {% include 'base/base_left.html' %}
+    {% block left_nav %}
+        <p>这是左侧导航栏</p>
     {% endblock %}
 </div>
-<div id="right_nav"></div>
+<div id="main_body">
+    {% block main_body %}
+        <p>主要内容填充区域</p>
+    {% endblock %}
+</div>
+<div id="right_nav">
+    {% include 'base/base_right.html' %}
+    {% block right_nav %}
+        <p>这是右侧导航栏</p>
+    {% endblock %}
+</div>
 
 </body>
 </html>

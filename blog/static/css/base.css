@@ -1,23 +1,40 @@
-#head_nav {
-    height: 20%;
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%;
     width: 100%;
-    background-color: #5cb85c;
 }
 
-#left_nav {
-    height: 100%;
-    width: 20%;
-     background-color: #b88e90;
-}
-
+/*头部导航*/
 #head_nav {
-    height: 100%;
-    width: 60%;
-     background-color: #b84d46;
+    height: 5%;
+    width: 100%;
+    background: #ffffff;
 }
 
-#main_body {
-    height: 100%;
+/*左侧导航*/
+#left_nav {
+    height: 95%;
     width: 20%;
-     background-color: #392db8;
+    background: #5cecff;
+    float: left;
+}
+
+/*主题部分*/
+#main_body {
+    height: 95%;
+    width: 60%;
+    background: #fdffd4;
+    float: left;
+}
+
+/*右侧导航*/
+#right_nav {
+    height: 95%;
+    width: 20%;
+    background: #87dedd;
+    float: left;
 }

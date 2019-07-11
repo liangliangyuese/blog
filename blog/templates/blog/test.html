@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
 
-    </script>
+        .nav {
+            height: 50px;
+            background: #00caf2;
+        }
+
+        .content {
+            flex-grow: 1;
+            background: #1c9e43;
+        }
+    </style>
 </head>
 <body>
-<div class="box">
-    <div class="box-top">
-        <div class="box-top-left">a</div>
-        <div class="box-top-right">b</div>
-    </div>
-    <div class="box-center">
-        <div class="box-center-left">c</div>
-        <div class="box-center-right">
-            <table class="center-box">
-                <thead></thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-
-</div>
+<div class="nav"></div>
+<div class="content">https://caniuse.com/#search=flex</div>
 </body>
 </html>
