@@ -12,27 +12,26 @@ def index(request):
 
 def register(request):
     if request.method == "GET":
+        u = request.COOKIES.get("username")
         obj = RegisterForm()
-        return render(request, 'user/register.html', {'obj': obj})
+        return render(request, 'user/register.html', {'obj': obj, "username": u})
     elif request.method == "POST":
         obj = RegisterForm(request.POST)
-        print(obj)
         if obj.is_valid():
-            print("注册用户成功")
             username = obj.cleaned_data.get("username")
             email = obj.cleaned_data.get("email")
             password1 = obj.cleaned_data.get("password1")
-            user = User.objects.create(username=username, email=email, password=password1)
+            User.objects.create(username=username, email=email, password=password1)
             return HttpResponseRedirect('/user/login/')
         else:
-            print("注册用户失败")
             return HttpResponse('提交数据不合法')
 
 
 def login(request):
     if request.method == "GET":
+        u = request.COOKIES.get("username")
         obj = LoginForm()
-        return render(request, 'user/login.html', {'obj': obj})
+        return render(request, 'user/login.html', {'obj': obj, "username": u})
     elif request.method == "POST":
         obj = LoginForm(request.POST)
         if obj.is_valid():
@@ -46,7 +45,8 @@ def login(request):
 
 def info(request):
     if request.method == "GET":
-        return render(request, 'user/info.html')
+        u = request.COOKIES.get("username")
+        return render(request, 'user/info.html', {"username": u})
 
 
 def logout(request):
