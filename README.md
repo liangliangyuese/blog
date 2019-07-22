@@ -21,6 +21,7 @@
 10.微信公众号
 11.日志
 12.防盗链
+13.敏感字屏蔽
 
 # 安装问题
 pip install --upgrade mysqlclient
