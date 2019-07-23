@@ -1,5 +1,13 @@
 {% extends "base/base.html" %}
 {% block title %}用户信息首页{% endblock %}
+{% block head_ %}
+    <script type="text/javascript" src="/static/js/get_data.js"></script>
+    <script>window.onload = function(){ user_info() }</script>
+{% endblock %}
+
 {% block main_body %}
-    用户信息中心
+    用户信息中心--这里展示一些用户的个人信息
+    <div id="user_info_i">
+    </div>
+
 {% endblock %}
