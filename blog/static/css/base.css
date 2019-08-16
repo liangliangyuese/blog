@@ -10,14 +10,14 @@ html, body {
 
 /*头部导航*/
 #head_nav {
-    height: 5%;
+    height: 50px;
     width: 100%;
     background: #ffffff;
 }
 
 /*左侧导航*/
 #left_nav {
-    height: 95%;
+    height: 800px;
     width: 20%;
     background: #5cecff;
     float: left;
@@ -25,7 +25,7 @@ html, body {
 
 /*主题部分*/
 #main_body {
-    height: 95%;
+    height: 800px;
     width: 60%;
     background: #fdffd4;
     float: left;
@@ -33,8 +33,15 @@ html, body {
 
 /*右侧导航*/
 #right_nav {
-    height: 95%;
+    height: 800px;
     width: 20%;
     background: #87dedd;
+    float: left;
+}
+/*底部导航栏*/
+#foot_nav{
+    height:119px;
+    width: 100%;
+    background: #ff6bad;
     float: left;
 }

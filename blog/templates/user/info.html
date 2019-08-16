@@ -1,8 +1,17 @@
 {% extends "base/base.html" %}
 {% block title %}用户信息首页{% endblock %}
 {% block head_ %}
-    <script type="text/javascript" src="/static/js/get_data.js"></script>
-    <script>window.onload = function(){ user_info() }</script>
+    {#    <script type="text/javascript" src="/static/js/get_data.js"></script>#}
+    <script type="text/javascript" src="{% static "js/get_data.js" %}"></script>
+    <script>
+        {#ajax csrf验证#}
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}'}
+        });
+        window.onload = function () {
+            user_info()
+        }
+    </script>
 {% endblock %}
 
 {% block main_body %}

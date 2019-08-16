@@ -1,6 +1,6 @@
 # coding=utf-8
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from .forms import RegisterForm, LoginForm
 from django.contrib.auth.models import User
 from .models import UserProfile
@@ -51,18 +51,20 @@ def info(request):
         u = request.COOKIES.get("username")
         return render(request, 'user/info.html', {"username": u})
     elif request.method == "POST":
-        # 返回用户个人信息
-        # TODO 指定用户的个人信息
-        # TODO 前端post请求方式优化
-        # TODO django csrf 调取首先需要获取对应的
-        print("后台接收到post请求")
         username = request.COOKIES.get("username")
         u = User.objects.filter(username=username).first()
-        print(u)
+        data = {"email": u.email, "username": username}
         u_info = UserProfile.objects.filter(user=u).first()
-        print(u_info)
-        return HttpResponse('查询当前登录用户的个人信息')
-
+        if u_info:
+            # 返回用户的相关信息
+            data2 = {"phone": u_info.phone, "user_img": u_info.user_img}
+        else:
+            # 在用户信息扩展表，生成默认的用户扩展信息
+            UserProfile.objects.create(user=u)
+            u_info = UserProfile.objects.filter(user=u).first()
+            data2 = {"phone": u_info.phone, "user_img": u_info.user_img}
+        data.update(data2)
+        return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
 def logout(request):
@@ -70,3 +72,5 @@ def logout(request):
         response = HttpResponseRedirect('/')
         response.delete_cookie('username')
         return response
+# TODO raise Http404 等页面
+# TODO 装饰器--确保用户必须登录
