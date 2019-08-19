@@ -37,6 +37,6 @@ urlpatterns = [
 
 ]
 # 定义错误跳转页面
-# handler403 = views.page_permission_denied
-# handler404 = views.page_ont_found
-# handler500 = views.page_error
+handler403 = views.page_permission_denied
+handler404 = views.page_ont_found
+handler500 = views.page_error
