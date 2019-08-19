@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import RedirectView
+from django.conf.urls import url
+from django.conf import settings
 from django.contrib.staticfiles.views import serve
+from django.views import static
 from . import views
 
 urlpatterns = [
@@ -27,7 +30,10 @@ urlpatterns = [
     path('comment/', include('comment.urls')),
     path('article/', include('article.urls')),
     path('user/', include('user.urls')),
-    path('favicon.ico', serve, {'path': 'static/image/favicon.ico'})
+    path('favicon.ico', serve, {'path': 'static/image/favicon.ico'}),
+    # 配置静态文件路由
+    url(r'^static/(?P<path>.*)$', static.serve,
+        {'document_root': settings.STATIC_ROOT}, name='static'),
 
 ]
 # 定义错误跳转页面
