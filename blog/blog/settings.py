@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 添加中间件
+    'blog.middleware.LoginMiddleware',
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -123,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
-    ('css', os.path.join(STATIC_ROOT, 'css'). replace('\\', '/')),
+    ('css', os.path.join(STATIC_ROOT, 'css').replace('\\', '/')),
     ('js', os.path.join(STATIC_ROOT, 'js').replace('\\', '/')),
     ('image', os.path.join(STATIC_ROOT, 'image').replace('\\', '/')),
     ('bootstrap-3.3.7', os.path.join(STATIC_ROOT, 'bootstrap-3.3.7').replace('\\', '/')),

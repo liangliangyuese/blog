@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 
 
+# TODO 登录部分目前使用中间件拦截--部分功能修改成装饰器拦截
 def index(request):
     # 用户信息首页
     return HttpResponse("hello,this is user info index!")
@@ -72,5 +73,3 @@ def logout(request):
         response = HttpResponseRedirect('/')
         response.delete_cookie('username')
         return response
-# TODO raise Http404 等页面
-# TODO 装饰器--确保用户必须登录

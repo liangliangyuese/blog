@@ -14,4 +14,3 @@ class Question(models.Model):
     start_time = models.DateTimeField(verbose_name="提问时间")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     read = models.IntegerField(verbose_name="阅读数量")
-

@@ -16,27 +16,25 @@
 
 
 <div id="left_nav">
-    {% include 'base/base_left.html' %}
     {% block left_nav %}
-    <p>这是左侧导航栏</p>
+        {% include 'base/base_left.html' %}
     {% endblock %}
 </div>
 <div id="main_body">
-    {% include 'base/base_main.html' %}
     {% block main_body %}
-    <p>主要内容填充区域</p>
+        {% include 'base/base_main.html' %}
     {% endblock %}
 </div>
 <div id="right_nav">
-    {% include 'base/base_right.html' %}
     {% block right_nav %}
-    <p>这是右侧导航栏</p>
+        {% include 'base/base_right.html' %}
     {% endblock %}
 </div>
 <div id="foot_nav">
-    {% include 'base/base_foot.html' %}
+
     {% block foot_nav %}
-    <p>底部导航栏</p>
+        {% include 'base/base_foot.html' %}
+
     {% endblock %}
 </div>
 </body>

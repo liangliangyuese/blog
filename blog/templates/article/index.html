@@ -1,6 +1,21 @@
 {% extends "base/base.html" %}
 {% block title %}文章首页{% endblock %}
+{% block head_ %}
+    <script type="text/javascript" src="/static/js/article_info.js"></script>
+    <script>
+        {#ajax csrf验证#}
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}'}
+        });
+        window.onload = function () {
+            hot_article_list()
+        }
+    </script>
+{% endblock %}
+
 {% block main_body %}
+    <div id="hot_article">
+    </div>
     调取文章相关接口 展示我的所有文章
     分页
     搜索联想
