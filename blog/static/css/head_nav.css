@@ -1,0 +1,9 @@
+#head_nav {
+    text-align: left; /*   对ul使用左对齐  */
+    /*padding: 0.15em 0 1px 0;*/
+
+}
+
+#head_nav.li {
+    display: inline; /*   直接用内联行显示，不用float，float不好控制   */
+}

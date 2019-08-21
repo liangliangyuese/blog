@@ -10,14 +10,6 @@ function hot_article_list() {
             callback: "test",
             success: function (data) {
                 console.log("文章的列表渲染");
-                // the_str =
-                //     "<p>用户昵称：" + data.username + "</p>" +
-                //     "<p>用户邮箱：" + data.email + "</p>" +
-                //     "<p>用户电话：" + data.phone + "</p>" +
-                //     "<p>用户头像</p>" +
-                //     "<img src='" + data.user_img + "' alt='用户头像' style='width: 100px'/>";
-                // $(user_info_i).append(the_str);
-
                 data = [{
                     "label": "HTML",
                     "collect": "100",

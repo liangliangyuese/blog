@@ -9,6 +9,11 @@ def index(request):
         return render(request, 'blog/index.html', {"username": u})
 
 
+def introduce(request):
+    if request.method == "GET":
+        return render(request, 'other/introduce.html')
+
+
 # 自定义404错误
 def page_ont_found(request):
     return render(request, 'error/404.html')

@@ -1,36 +1,17 @@
-<div >
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">博客网站</a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">首页</a></li>
-                    <li><a href="#">问答专区</a></li>
-                    {% if username %}
-                        <li><a href="#">你好,{{ username }}!</a></li>
-                        <li><a href="/article/">我的博客</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                个人信息
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/user/info">我的资料</a></li>
-                                <li><a href="#">我的问答</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">信息设置</a></li>
-                                <li class="divider"></li>
-                                <li><a href="/user/logout">退出登录</a></li>
-                            </ul>
-                        </li>
-                    {% else %}
-                        <li><a href="/user/login">登录</a></li>
-                        <li><a href="/user/register">注册</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </nav>
-</div>
+<nav>
+    <a href="/introduce/">博客网站</a>
+    <a href="#">首页</a>
+    <a href="#">问答专区</a>
+    {% if username %}
+        <a href="#">你好,{{ username }}!</a>
+        <a href="/article/">我的博客</a>
+        <a href="#">个人信息</a>
+        <a href="/user/info">我的资料</a>
+        <a href="#">我的问答</a>
+        <a href="#">信息设置</a>
+        <a href="/user/logout">退出登录</a>
+    {% else %}
+        <a href="/user/login">登录</a>
+        <a href="/user/register">注册</a>
+    {% endif %}
+</nav>

@@ -7,11 +7,14 @@
     <script type="text/javascript" src="/static/bootstrap-3.3.7/js/bootstrap.js"></script>
     <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.css">
     <link rel="stylesheet" href="/static/css/base.css">
+{#    <link rel="stylesheet" href="/static/css/head_nav.css">#}
     {% block head_ %}{% endblock %}
 </head>
 <body bgcolor="#5cecff">
 <div id="head_nav">
-    {% include 'base/base_head.html' %}
+    {% block head_nav %}
+        {% include 'base/base_head.html' %}
+    {% endblock %}
 </div>
 
 
