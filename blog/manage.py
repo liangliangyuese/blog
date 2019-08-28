@@ -3,6 +3,8 @@
 import os
 import sys
 
+sys.path.append(os.path.split(os.path.abspath(os.path.dirname(__file__)))[0])
+
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blog.settings')

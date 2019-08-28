@@ -1,17 +1,26 @@
 <nav>
-    <a href="/introduce/">博客网站</a>
-    <a href="#">首页</a>
-    <a href="#">问答专区</a>
-    {% if username %}
-        <a href="#">你好,{{ username }}!</a>
-        <a href="/article/">我的博客</a>
-        <a href="#">个人信息</a>
-        <a href="/user/info">我的资料</a>
-        <a href="#">我的问答</a>
-        <a href="#">信息设置</a>
-        <a href="/user/logout">退出登录</a>
-    {% else %}
-        <a href="/user/login">登录</a>
-        <a href="/user/register">注册</a>
-    {% endif %}
+    <ul id="level">
+        <li><a href="/introduce/">博客网站&nbsp;&nbsp;</a></li>
+        <li><a href="/bird/">观鸟网&nbsp;&nbsp;</a></li>
+        <li><a href="#">首页&nbsp;&nbsp;</a></li>
+        <li><a href="#">问答专区&nbsp;&nbsp;</a></li>
+        {% if username %}
+            <li><a href="#">你好,{{ username }}!&nbsp;&nbsp;</a></li>
+            <li>
+                <a href="/article/">我的博客&nbsp;</a>
+                <ul>
+                    <li><a href="/article/write/">写博客&nbsp;</a></li>
+                    <li><a href="/article/admin/">管理博客&nbsp;</a></li>
+                </ul>
+            </li>
+            <li><a href="#">个人信息&nbsp;</a></li>
+            <li><a href="/user/info">我的资料&nbsp;</a></li>
+            <li><a href="#">我的问答&nbsp;</a></li>
+            <li><a href="#">信息设置&nbsp;</a></li>
+            <li><a href="/user/logout">退出登录&nbsp;</a></li>
+        {% else %}
+            <li><a href="/user/login">登录&nbsp;</a></li>
+            <li><a href="/user/register">注册&nbsp;</a></li>
+        {% endif %}
+    </ul>
 </nav>

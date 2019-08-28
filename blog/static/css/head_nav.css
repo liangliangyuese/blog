@@ -1,9 +1,18 @@
-#head_nav {
-    text-align: left; /*   对ul使用左对齐  */
-    /*padding: 0.15em 0 1px 0;*/
-
+* {
+    padding: 0;
+    margin: 0
 }
 
-#head_nav.li {
-    display: inline; /*   直接用内联行显示，不用float，float不好控制   */
+.clear {
+    clear: both;
 }
+
+a {
+    text-decoration-line: none
+}
+
+ul, li {
+    list-style: none;
+    float: left;
+}
+

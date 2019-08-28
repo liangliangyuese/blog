@@ -3,10 +3,12 @@ from django import forms
 from .models import Article, ArticleState
 
 
+# TODO 标签可以生成新的标签
+# TODO 标签可以选择用户现有
 class ArticleForm(forms.Form):
-    title = forms.CharField(label="article title", max_length=20)
-    label = forms.CharField(label="article label", max_length=20)
-    content = forms.CharField(label="article content")
+    title = forms.CharField(label="文章标题", max_length=20)
+    label = forms.CharField(label="文章标签", max_length=20)
+    content = forms.CharField(label="文章内容")
 
     def clean_title(self):
         title = self.cleaned_data.get("title")
