@@ -6,20 +6,21 @@
 html, body {
     height: 100%;
     width: 100%;
+    background: #b1e2ff;
 }
 
 /*头部导航*/
 #head_nav {
     height: 50px;
     width: 100%;
-    background: #ffffff;
+    /*background: #ffffff;*/
 }
 
 /*左侧导航*/
 #left_nav {
     height: 800px;
     width: 20%;
-    background: #5cecff;
+    /*background: #5cecff;*/
     float: left;
 }
 
@@ -27,7 +28,7 @@ html, body {
 #main_body {
     height: 800px;
     width: 60%;
-    background: #fdffd4;
+    /*background: #fdffd4;*/
     float: left;
 }
 
@@ -35,13 +36,13 @@ html, body {
 #right_nav {
     height: 800px;
     width: 20%;
-    background: #87dedd;
+    /*background: #87dedd;*/
     float: left;
 }
 /*底部导航栏*/
 #foot_nav{
     height:119px;
     width: 100%;
-    background: #ff6bad;
+    /*background: #ff6bad;*/
     float: left;
 }

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 
 
 def index(request):
+    # 项目首页
     if request.method == "GET":
         u = request.COOKIES.get("username")
         return render(request, 'blog/index.html', {"username": u})

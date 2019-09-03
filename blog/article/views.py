@@ -7,6 +7,14 @@ from django.contrib.auth.models import User
 from .forms import ArticleForm
 
 
+# 1.写文章（页面+接口）
+# 2.修改文章（页面+接口）
+# 3.删除文章（页面+接口/）
+
+# 4.文章列表（自己的文章）
+# 5.当前热门文章（所有人的文章）
+
+# TODO 文章在页面上如何写（from 表单？）
 def index(request):
     # 文章的首页
     if request.method == "GET":
@@ -48,12 +56,6 @@ def write(request):
             title = obj.cleaned_data.get('title')
             label = obj.cleaned_data.get('label')
             content = obj.cleaned_data.get('content')
-            print("文章正常字段等等正常")
-            print(title)
-            print(label)
-            print(content)
-            print("保存文章至数据库")
-            # TODO 默认
             Article.objects.create(collect=0, like=0, label=label, title=title, content=content,
                                    user=User.objects.filter(username=user_name).first())
             return HttpResponseRedirect('/article/admin/')

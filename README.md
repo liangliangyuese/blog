@@ -1,32 +1,42 @@
-# blog
-这是一个博客项目。
-# 用户模块 user
-关注/粉丝
-# 文章 article
-类别
-# 评论 comment
-回复评论
-# 首页 home
+#这是一个博客项目。
+#### user 用户模块 
+    1.注册
+    2.登录
+    3.退出
+    4.用户信息
+#### article 文章模块
+    1.写文章
+    2.修改文章
+    3.删除文章
+    4.文章列表
+#### comment 评论模块
+    1.用户私信
+    2.文章评论
+    3.提问评论
+#### question 提问模块
+    1.发表提问
+    2.回复提问
+# 页面布局
+    1.通用模板
+        头部，左侧导航，右侧导航，页面主题 
 
-# TODO
-1.友情链接
-2.公告
-3.Oauth登陆
-4.全文检索
-5.Memcache缓存
-6.seo:优化博客排名
-7.图床:优化图片加载速度
-8.django-compressor：静态文件压缩-加速
-9.邮件提醒
-10.微信公众号
-11.日志
-12.防盗链
-13.django中间件:敏感字屏蔽,cookie,session等等
+# 待添加功能
+    1.友情链接
+    2.公告
+    3.Oauth登陆
+    4.全文检索
+    5.Memcache缓存
+    6.seo:优化博客排名
+    7.图床:优化图片加载速度
+    8.django-compressor：静态文件压缩-加速
+    9.邮件提醒
+    10.微信公众号
+    11.日志
+    12.防盗链
+    13.django中间件:敏感字屏蔽,cookie,session等等
 
 # 安装问题
-pip install --upgrade mysqlclient
+    1.数据库依赖pip install --upgrade mysqlclient
 
-# 页面布局
 
-头部，左边，右边，中间
 

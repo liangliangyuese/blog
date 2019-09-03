@@ -3,7 +3,7 @@ function user_info() {
     console.log("获取用户的个人信息");
     $.ajax({
         type: "post",
-        url: "/user/info/",
+        url: "/user/",
         data: {},
         dataType: "json",
         callback: "test",
