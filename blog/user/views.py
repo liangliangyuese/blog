@@ -1,9 +1,9 @@
 # coding=utf-8
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from .forms import RegisterForm, LoginForm, RestForm
 from django.contrib.auth.models import User
 from .models import UserProfile
+from .forms import RegisterForm, LoginForm, RestForm
 
 
 def index(request):
@@ -14,12 +14,9 @@ def index(request):
         return render(request, 'user/info.html', {"username": u})
     elif request.method == "POST":
         # TODO 用户扩展信息现在是在查询用户信息时添加
-        # 查找返回用户信息
+        # 查找 返回指定用户信息
         # username参数存在认为查找指定用户信息
         username = request.POST.get("username")
-        if not username:
-            # 不存在 查找当前登录用户信息
-            username = request.COOKIES.get("username")
         u = User.objects.filter(username=username).first()
         data = {"email": u.email, "username": username}
         u_info = UserProfile.objects.filter(user=u).first()
