@@ -10,41 +10,38 @@
     <link rel="stylesheet" href="/static/css/head_nav.css">
     {% block head_ %}{% endblock %}
 </head>
-<body bgcolor="#5cecff">
-<div id="wrapper">
-    <div id="head_nav">
-        {#    头部导航#}
-        {% block head_nav %}
-            {% include 'base/base_head.html' %}
-        {% endblock %}
+<body>
+    <div id="wrapper">
+        <div id="head_nav">
+            {#    头部导航#}
+            {% block head_nav %}
+                {% include 'base/base_head.html' %}
+            {% endblock %}
+        </div>
+        <div id="left_nav">
+            {#    左侧导航#}
+            {% block left_nav %}
+                {% include 'base/base_left.html' %}
+            {% endblock %}
+        </div>
+        <div id="main_body">
+            {#    主题内容#}
+            {% block main_body %}
+                {% include 'base/base_main.html' %}
+            {% endblock %}
+        </div>
+        <div id="right_nav">
+            {#    右侧导航#}
+            {% block right_nav %}
+                {% include 'base/base_right.html' %}
+            {% endblock %}
+        </div>
+        <div id="foot_nav">
+            {#    底部导航#}
+            {% block foot_nav %}
+                {% include 'base/base_foot.html' %}
+            {% endblock %}
+        </div>
     </div>
-
-
-    <div id="left_nav">
-        {#    左侧导航#}
-        {% block left_nav %}
-            {% include 'base/base_left.html' %}
-        {% endblock %}
-    </div>
-    <div id="main_body">
-        {#    主题内容#}
-        {% block main_body %}
-            {% include 'base/base_main.html' %}
-        {% endblock %}
-    </div>
-    <div id="right_nav">
-        {#    右侧导航#}
-        {% block right_nav %}
-            {% include 'base/base_right.html' %}
-        {% endblock %}
-    </div>
-    <div id="foot_nav">
-        {#    底部导航#}
-        {% block foot_nav %}
-            {% include 'base/base_foot.html' %}
-        {% endblock %}
-    </div>
-</div>
-
 </body>
 </html>

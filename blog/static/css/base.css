@@ -3,46 +3,68 @@
     padding: 0px;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    background: #b1e2ff;
+body {
+    min-height: 101%;
+    background: #ffd8da;
+    display: block;
+}
+
+/*主体*/
+#wrapper {
+    /*背景图片*/
+    background-image: url("/static/image/109876_top.jpg");
+    /*设置定位居中 顶部*/
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: 0px;
+    max-width: 950px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    /*背景颜色*/
+    background: #5cecff;
+}
+
+/*边框阴影*/
+#wrapper {
+    box-shadow: #666 0px 0px 10px;
 }
 
 /*头部导航*/
 #head_nav {
     height: 50px;
-    width: 100%;
-    /*background: #ffffff;*/
+    width: 950px;
+    background: #d3ffa4;
 }
 
 /*左侧导航*/
 #left_nav {
     height: 800px;
-    width: 20%;
-    /*background: #5cecff;*/
+    width: 75px;
+    background: #5cecff;
     float: left;
 }
 
 /*主题部分*/
 #main_body {
     height: 800px;
-    width: 60%;
-    /*background: #fdffd4;*/
+    width: 800px;
+    background: #fdffd4;
     float: left;
 }
 
 /*右侧导航*/
 #right_nav {
     height: 800px;
-    width: 20%;
-    /*background: #87dedd;*/
+    width: 75px;
+    background: #87dedd;
     float: left;
 }
+
 /*底部导航栏*/
-#foot_nav{
-    height:119px;
-    width: 100%;
-    /*background: #ff6bad;*/
+#foot_nav {
+    height: 119px;
+    width: 950px;
+    background: #ff6bad;
     float: left;
 }

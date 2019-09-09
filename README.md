@@ -34,6 +34,7 @@
     11.日志
     12.防盗链
     13.django中间件:敏感字屏蔽,cookie,session等等
+    14.富文本框
 
 # 安装问题
     1.数据库依赖pip install --upgrade mysqlclient

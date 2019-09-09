@@ -1,6 +1,7 @@
 {% extends "base/base.html" %}
 {% block title %}写文章{% endblock %}
 {% block main_body %}
+    <p>用户创作文章的页面，表单调整为markdowm编辑器</p>
     <form action="/article/write/" method="post">
         {% csrf_token %}
         {{ obj }}
