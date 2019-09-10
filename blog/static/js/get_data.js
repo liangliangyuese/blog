@@ -1,10 +1,10 @@
 // 调取接口
-function user_info() {
+function user_info(data) {
     console.log("获取用户的个人信息");
     $.ajax({
         type: "post",
         url: "/user/",
-        data: {},
+        data: data,
         dataType: "json",
         callback: "test",
         success: function (data) {

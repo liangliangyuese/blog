@@ -9,7 +9,7 @@
             data: {csrfmiddlewaretoken: '{{ csrf_token }}'}
         });
         window.onload = function () {
-            user_info()
+            user_info({"username":"{{ username }}"})
         }
     </script>
 {% endblock %}

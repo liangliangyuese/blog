@@ -52,10 +52,10 @@ def alter(request):
             title = obj.cleaned_data.get('title')
             content = obj.cleaned_data.get('content')
             Question.objects.filter(id=id).update({"title": title, "content": content})
-            return JsonResponse({"code": "200", "message": "文章编辑成功"}, safe=False,
+            return JsonResponse({"code": "200", "message": "提问编辑成功"}, safe=False,
                                 json_dumps_params={'ensure_ascii': False})
         else:
-            return JsonResponse({"code": "40005", "message": "文章编辑失败"}, safe=False,
+            return JsonResponse({"code": "40005", "message": "提问编辑失败"}, safe=False,
                                 json_dumps_params={'ensure_ascii': False})
 
 
@@ -71,20 +71,23 @@ def remove(request):
             if user == u_id:
                 # 删除文章
                 Question.objects.filter(id=id).delete()
-                return JsonResponse({"code": "200", "message": "文章删除成功"}, safe=False,
+                return JsonResponse({"code": "200", "message": "提问删除成功"}, safe=False,
                                     json_dumps_params={'ensure_ascii': False})
             else:
                 # 无法删除文章
-                return JsonResponse({"code": "40005", "message": "删除文章失败，权限不足"}, safe=False,
+                return JsonResponse({"code": "40005", "message": "删除提问失败，权限不足"}, safe=False,
                                     json_dumps_params={'ensure_ascii': False})
         else:
-            return JsonResponse({"code": "40005", "message": "删除文章失败，传递参数不合法"}, safe=False,
+            return JsonResponse({"code": "40005", "message": "删除提问失败，传递参数不合法"}, safe=False,
                                 json_dumps_params={'ensure_ascii': False})
 
 
 def hot(request):
     # 热门提问 （接口）
-    if request.method == "POST":
+    if request.method == "GET":
+        u = request.COOKIES.get("username")
+        return render(request, 'question/hot.html', {"username": u})
+    elif request.method == "POST":
         res = Question.objects.all()[:10]
         data = [{"id": i.id, "title": i.title, "content": i.content, "start_time": i.start_time, "user": i.user,
                  "read": i.read} for i in res]

@@ -7,6 +7,8 @@ urlpatterns = [
     path("", views.index, name="index"),
     # 创建提问页面
     path("create/", views.create, name="create"),
+    # 热门提问页面
+    path("hot/", views.hot, name="hot"),
     # 编辑问题页面
     path("alter/", views.alter, name="alter"),
 ]

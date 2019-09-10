@@ -6,7 +6,8 @@ urlpatterns = [
     # 文章首页
     path("", views.index, name="index"),
     # 管理文章
-    path("admin/", views.admin, name="admin"),
+    # 热门文章
+    path("hot/", views.hot, name="hot"),
     # 新建文章
     path("write/", views.write, name="write"),
 ]

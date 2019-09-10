@@ -33,6 +33,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('comment/', include('comment.urls')),
     path('article/', include('article.urls')),
+    path('question/', include('question.urls')),
     path('user/', include('user.urls')),
     path('favicon.ico', serve, {'path': 'static/image/favicon.ico'}),
     # 配置静态文件路由

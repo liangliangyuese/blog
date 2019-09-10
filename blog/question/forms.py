@@ -4,9 +4,9 @@ from django import forms
 
 class CreateQuestionForm(forms.Form):
     # 提问表单
-    # TODO TextField 字段是否存在
+    # TODO 调整为markdown编辑器
     title = forms.CharField(label="提问标题", max_length=20)
-    content = forms.TextField(label="提问正文")
+    content = forms.CharField(label="提问正文")
 
     def clean_title(self):
         title = self.cleaned_data.get("title")
@@ -18,7 +18,7 @@ class CreateQuestionForm(forms.Form):
 class AlterQuestionForm(forms.Form):
     # 编辑提问表单
     title = forms.CharField(label="提问标题", max_length=20)
-    content = forms.TextField(label="提问正文")
+    content = forms.CharField(label="提问正文")
     id = forms.IntegerField(label="提问id")
 
     def clean_title(self):
