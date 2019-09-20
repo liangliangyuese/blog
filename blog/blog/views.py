@@ -10,21 +10,6 @@ def index(request):
         return render(request, 'blog/index.html', {"username": u})
 
 
-def introduce(request):
-    if request.method == "GET":
-        return render(request, 'other/introduce.html')
-
-
-def bird(request):
-    if request.method == "GET":
-        return render(request, 'other/bird.html')
-
-
-def auto_change(request):
-    if request.method == "GET":
-        return render(request, 'other/auto_change.html')
-
-
 # 自定义404错误
 def page_ont_found(request):
     return render(request, 'error/404.html')

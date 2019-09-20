@@ -27,9 +27,6 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
     path('index/', views.index),
-    path('introduce/', views.introduce),
-    path('bird/', views.bird),
-    path('auto_change/', views.auto_change),
     path('admin/', admin.site.urls),
     path('comment/', include('comment.urls')),
     path('article/', include('article.urls')),

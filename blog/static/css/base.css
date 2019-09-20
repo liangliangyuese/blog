@@ -6,7 +6,7 @@
 body {
     min-height: 101%;
     background: #ffd8da;
-    display: block;
+    display: flex;
 }
 
 /*主体*/
